@@ -39,3 +39,18 @@ try {
 - If lock cannot be acquired (`locked == false`) → throw `ApiException` with code **LOCK_FAILED (409)**.  
 - If the lock is acquired successfully → always call `lock.unlock()`.  
 - Use `try/catch` to **swallow unlock exceptions** so they don’t hide the original error.  
+
+## Liquibase
+- Time checkin
+```xml
+    <changeSet id="008" author="you" context="seed">
+        <insert tableName="time_window">
+            <column name="start_time" value="09:00:00"/>
+            <column name="end_time" value="11:00:00"/>
+        </insert>
+        <insert tableName="time_window">
+            <column name="start_time" value="19:00:00"/>
+            <column name="end_time" value="21:00:00"/>
+        </insert>
+    </changeSet>
+```
