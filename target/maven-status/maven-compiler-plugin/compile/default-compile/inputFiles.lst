@@ -4,11 +4,13 @@ C:\Users\84346\Desktop\daily-checkin\src\main\java\com\example\dailycheckin\cont
 C:\Users\84346\Desktop\daily-checkin\src\main\java\com\example\dailycheckin\controller\TransactionController.java
 C:\Users\84346\Desktop\daily-checkin\src\main\java\com\example\dailycheckin\controller\UserController.java
 C:\Users\84346\Desktop\daily-checkin\src\main\java\com\example\dailycheckin\DailyCheckinApplication.java
+C:\Users\84346\Desktop\daily-checkin\src\main\java\com\example\dailycheckin\dto\ApiResponse.java
 C:\Users\84346\Desktop\daily-checkin\src\main\java\com\example\dailycheckin\dto\CheckInResponse.java
 C:\Users\84346\Desktop\daily-checkin\src\main\java\com\example\dailycheckin\dto\CreateUserRequest.java
 C:\Users\84346\Desktop\daily-checkin\src\main\java\com\example\dailycheckin\dto\DailyStatus.java
 C:\Users\84346\Desktop\daily-checkin\src\main\java\com\example\dailycheckin\dto\DayStatus.java
 C:\Users\84346\Desktop\daily-checkin\src\main\java\com\example\dailycheckin\dto\DeductPointRequest.java
+C:\Users\84346\Desktop\daily-checkin\src\main\java\com\example\dailycheckin\dto\ErrorField.java
 C:\Users\84346\Desktop\daily-checkin\src\main\java\com\example\dailycheckin\dto\MonthCheckInStatusResponse.java
 C:\Users\84346\Desktop\daily-checkin\src\main\java\com\example\dailycheckin\dto\MonthlyDailyStatusResponse.java
 C:\Users\84346\Desktop\daily-checkin\src\main\java\com\example\dailycheckin\dto\TransactionItem.java
