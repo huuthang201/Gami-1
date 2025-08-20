@@ -2,11 +2,14 @@
 
 ## Tech
 - Java 17, Spring Boot 3
-- PostgreSQL + Liquibase
+- MySQL + Liquibase
 - Redis + Redisson (distributed lock)
 - JPA/Hibernate
+- Docker
 
 ## Run
 ```bash
 docker compose up -d
-./mvnw spring-boot:run
+mvn -q clean
+mvn -q compile
+mvn -q spring-boot:run
