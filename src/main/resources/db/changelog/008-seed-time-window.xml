@@ -1,0 +1,15 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.24.xsd">
+    <changeSet id="008" author="you" context="seed">
+        <insert tableName="time_window">
+            <column name="start_time" value="09:00:00"/>
+            <column name="end_time" value="11:00:00"/>
+        </insert>
+        <insert tableName="time_window">
+            <column name="start_time" value="19:00:00"/>
+            <column name="end_time" value="21:00:00"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

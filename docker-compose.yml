@@ -1,0 +1,39 @@
+version: "3.9"
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: dc_mysql
+    environment:
+      MYSQL_DATABASE: checkin
+      MYSQL_USER: checkin
+      MYSQL_PASSWORD: checkin
+      MYSQL_ROOT_PASSWORD: root
+    command: >
+      --default-time-zone=+07:00
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_unicode_ci
+      --skip-name-resolve
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysqldata:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost", "-ucheckin", "-pcheckin"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7
+    container_name: dc_redis
+    ports:
+      - "6379:6379"
+    command: ["redis-server","--appendonly","no"]
+    healthcheck:
+      test: ["CMD","redis-cli","ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mysqldata:

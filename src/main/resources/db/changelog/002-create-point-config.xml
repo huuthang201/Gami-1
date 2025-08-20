@@ -1,0 +1,18 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.24.xsd">
+    <changeSet id="002" author="you">
+        <createTable tableName="point_config">
+            <column name="order_index" type="INT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="points" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="active_from" type="DATE"/>
+            <column name="active_to" type="DATE"/>
+            <column name="enabled" type="BOOLEAN" defaultValueBoolean="true"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

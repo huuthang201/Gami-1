@@ -1,0 +1,35 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.24.xsd">
+    <changeSet id="007" author="you" context="seed">
+        <insert tableName="point_config">
+            <column name="order_index" valueNumeric="1"/>
+            <column name="points" valueNumeric="1"/>
+        </insert>
+        <insert tableName="point_config">
+            <column name="order_index" valueNumeric="2"/>
+            <column name="points" valueNumeric="2"/>
+        </insert>
+        <insert tableName="point_config">
+            <column name="order_index" valueNumeric="3"/>
+            <column name="points" valueNumeric="3"/>
+        </insert>
+        <insert tableName="point_config">
+            <column name="order_index" valueNumeric="4"/>
+            <column name="points" valueNumeric="5"/>
+        </insert>
+        <insert tableName="point_config">
+            <column name="order_index" valueNumeric="5"/>
+            <column name="points" valueNumeric="8"/>
+        </insert>
+        <insert tableName="point_config">
+            <column name="order_index" valueNumeric="6"/>
+            <column name="points" valueNumeric="13"/>
+        </insert>
+        <insert tableName="point_config">
+            <column name="order_index" valueNumeric="7"/>
+            <column name="points" valueNumeric="21"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+          http://www.liquibase.org/xml/ns/dbchangelog
+          https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.24.xsd">
+
+    <include file="db/changelog/001-create-users.xml"/>
+    <include file="db/changelog/002-create-point-config.xml"/>
+    <include file="db/changelog/003-create-time-window.xml"/>
+    <include file="db/changelog/004-create-checkin.xml"/>
+    <include file="db/changelog/005-create-transaction.xml"/>
+    <include file="db/changelog/006-create-monthly-summary.xml"/>
+    <include file="db/changelog/007-seed-point-config.xml"/>
+    <include file="db/changelog/008-seed-time-window.xml"/>
+    <include file="db/changelog/009-seed-user-dev.xml"/>
+
+</databaseChangeLog>

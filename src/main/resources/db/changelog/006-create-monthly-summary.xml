@@ -1,0 +1,30 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.24.xsd">
+    <changeSet id="006" author="you">
+        <createTable tableName="monthly_checkin_summary">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_mcs_user" referencedTableName="users" referencedColumnNames="id"/>
+            </column>
+            <column name="ym" type="CHAR(6)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="checkin_count" type="INT" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_checkin_date" type="DATE"/>
+            <column name="total_awarded_points" type="INT" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="lock_version" type="INT" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_at" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP"/>
+        </createTable>
+        <addUniqueConstraint tableName="monthly_checkin_summary" columnNames="user_id,ym" constraintName="uk_mcs_user_month"/>
+    </changeSet>
+</databaseChangeLog>
