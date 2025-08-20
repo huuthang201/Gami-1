@@ -16,3 +16,24 @@ docker compose up -d
 mvn -q clean
 mvn -q compile
 mvn -q spring-boot:run
+```
+
+## Redis
+- Create distributed lock
+```java
+try {
+    String lockKey = "lock:checkin:" + userId + ":" + today;
+    RLock lock = redisson.getLock(lockKey);
+    ...
+    locked = lock.tryLock(3, TimeUnit.SECONDS);
+    ...
+} finally {
+    if (locked) {
+        try { lock.unlock(); } catch (Exception ignore) {}
+    }
+}
+```
+
+- Wait up to **3 seconds** to acquire the lock.  
+- If interrupted → throw `ApiException` with code **LOCK_INTERRUPTED (409)**.  
+- If lock cannot be acquired (`locked == false`) → throw `ApiException` with code **LOCK_FAILED (409)**.  
