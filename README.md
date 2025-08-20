@@ -37,3 +37,5 @@ try {
 - Wait up to **3 seconds** to acquire the lock.  
 - If interrupted → throw `ApiException` with code **LOCK_INTERRUPTED (409)**.  
 - If lock cannot be acquired (`locked == false`) → throw `ApiException` with code **LOCK_FAILED (409)**.  
+- If the lock is acquired successfully → always call `lock.unlock()`.  
+- Use `try/catch` to **swallow unlock exceptions** so they don’t hide the original error.  
